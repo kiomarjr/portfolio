@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519202808) do
+ActiveRecord::Schema.define(version: 20170519204605) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contratos", force: :cascade do |t|
+    t.string   "numero"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "cliente_id"
+    t.index ["cliente_id"], name: "index_contratos_on_cliente_id"
   end
 
 end
