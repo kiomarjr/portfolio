@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contratos
   root "clientes#index"
 
   resources :clientes
