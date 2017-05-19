@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:numero) %></th>
-      <th><%= model_class.human_attribute_name(:cliente_id) %></th>
+      <th><%= model_class.human_attribute_name(:cliente) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= link_to contrato.id, contrato_path(contrato) %></td>
         <td><%= contrato.numero %></td>
-        <td><%= contrato.cliente_id %></td>
+        <td><%= contrato.cliente.nome %></td>
         <td><%=l contrato.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
